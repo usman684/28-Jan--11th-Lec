@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Form Handling</h1>
+    <form onsubmit="calPrcnt(); return false;">
+        <input type="number" name="obtMarks" id="obtMarks" placeholder="Enter Obtain Marks">
+        <input type="number" name="totMarks" id="totMarks" placeholder="Enter Total Marks">
+        <button>Calculate</button>
+    </form>
+
+    <div id="percentage">
+
+    </div>
+    <script>
+        function calPrcnt(){
+            const obtRef = document.querySelector("#obtMarks");
+            const totRef = document.querySelector("#totMarks");
+            const obtMarks = Number(obtRef.value);
+            const totMarks = Number(totRef.value);
+            const prcnt = (obtMarks/totMarks) * 100;
+
+            const perdivRef = document.querySelector("#percentage");
+            perdivRef.innerHTML = `My Reulst is ${prcnt}  % Obtained`;
+            console.log(prcnt);
+        }
+    </script>
+
+    <h1>BMI Calculate</h1>
+    <form onsubmit="BMICal(); return false;">
+        <input type="number" name="weight" id="weight" placeholder="Enter Your weight in Kg">
+        <input type="number" name="height" id="height" placeholder="Enter Your height in Meters">
+
+        <button>Calculate</button>
+    </form>
+    <div id="cal"></div>
+    <script>
+        function BMICal(){
+            const wRef = document.querySelector("#weight");
+            const hRef = document.querySelector("#height");
+            const weight = Number(wRef.value);
+            const height = Number(hRef.value.toFixed(2));
+            const BMI = weight / (height ** 2);
+            const bmidivRef = document.querySelector("#cal");
+            bmidivRef.innerHTML = `MY BMI is ${BMI.toFixed(2)}`;
+            console.log(BMI);
+        }
+
+
+
+        if(4>3){
+            var std = 44;
+        }
+        std = 2;
+        console.log(std);
+    </script>
+</body>
+</html>
